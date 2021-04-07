@@ -75,13 +75,17 @@ function Snowman(props) {
     //resets the guessed list and number of wrong guesses
     setNWrong(0);
     setGuessed(new Set());
-    setAnswer(props.words[0]);
+    setAnswer(randomWord(ENGLISH_WORDS));
+    //ASK ABOUT THIS
+    // setAnswer(word => word === props.words[0]);
+    console.log({answer})
   }
 
   /** render: render game */
   return (
       <div className="Snowman">
-        <p>Number wrong: {nWrong}</p>
+        {/* <p>Number wrong: {nWrong}</p> */}
+        <p>Number of guesses left: {6 - nWrong}</p>
         <img src={(props.images)[nWrong]} alt={nWrong} />
         <p className="Snowman-word">{guessedWord()}</p>
         {nWrong < 6 && <p className="Snowman-letter-buttons" data-testid="snowman-letter-buttons">{generateButtons()}</p>}
