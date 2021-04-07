@@ -1,0 +1,9 @@
+.Snowman {
+  width: 467px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.Snowman-word {
+  letter-spacing: 1em;
+}
